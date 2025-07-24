@@ -14,11 +14,54 @@ body {
     color: #fff;
     padding: 15px 20px;
     text-align: center;
-    position: fixed; top: 0; left: 0; width: 100%;
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%;
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
+
 .main-header h1 {
      font-size: 24px; 
      margin: 0;
-     }
+}
+
+.main-wrapper {
+     display: flex; 
+     flex-direction: row;
+ }
+
+ .sidebar {
+    background-color: #34495e;
+    color: #fff;
+    padding: 20px;
+    width: 200px;
+    position: fixed; 
+    top: 60px; 
+    right: 0;
+    height: calc(100% - 60px);
+    overflow-y: auto;
+}
+
+.sidebar h2 { 
+    font-size: 20px; 
+    margin-bottom: 15px; 
+    text-align: center;
+ }
+.sidebar ul { 
+    list-style: none; 
+}
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 0;
+    display: block;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.sidebar ul li a:hover { 
+    background-color: #5d6d7e;
+ }
+
+ 
