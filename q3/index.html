@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>פסטיבל בעלי הכנף - טופס הרשמה</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>הרשמה לפסטיבל "בעלי הכנף"</h1>
+        <p>מיועד למעופפים בלבד!</p>
+        <form id="registrationForm">
+
+             <div class="form-group">
+                <label for="performerName">שם מבצע:</label>
+                <input type="text" id="performerName" name="performerName">
+                <div class="error-message" id="performerNameError"></div>
+            </div>
+            <div class="form-group">
+                <label for="email">אימייל:</label>
+                <input type="text" id="email" name="email">
+                <div class="error-message" id="emailError"></div>
+            </div>
+            <div class="form-group">
+                <label for="wingType">סוג כנפיים:</label>
+                <select id="wingType" name="wingType">
+                    <option value="">בחר סוג</option>
+                    <option value="feather">נוצה</option>
+                    <option value="leather">עור</option>
+                    <option value="light">אור</option>
+                </select>
+                <div class="error-message" id="wingTypeError"></div>
+            </div>
+            <div class="form-group">
+                <label for="musicalStyle">סגנון מוזיקלי:</label>
+                <input type="text" id="musicalStyle" name="musicalStyle">
+                <div class="error-message" id="musicalStyleError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="chosenSong">שיר נבחר:</label>
+                <input type="text" id="chosenSong" name="chosenSong">
+                <div class="error-message" id="chosenSongError"></div>
+            </div>
+             <div class="form-group">
+                <label for="experience">ניסיון קודם בתחרויות (שנים):</label>
+                <input type="number" id="experience" name="experience" min="0">
+                <div class="error-message" id="experienceError"></div>
+            </div>
+
+            <div class="form-group checkbox-group">
+                <input type="checkbox" id="frontAudienceApproved" name="frontAudienceApproved">
+                <label for="frontAudienceApproved">האם הקול נבדק ע"י נשר מוסמך?</label>
+            </div>
+            
+            <button type="submit">שלח הרשמה</button>
+
+        </form>
+        <div id="successMessage" class="success-message"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
