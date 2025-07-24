@@ -2,7 +2,11 @@ body {
    font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     margin: 0;
-    direction: rtl;}
+    direction: rtl;
+    overflow-x: hidden;
+   background-color: lavenderblush;
+}
+
 
 .container {
     background-color: #fff;
@@ -10,7 +14,8 @@ body {
     border-radius: 8px;
     width: 100%;
     max-width: 500px;
-    margin: 30px auto;}
+    margin: 30px auto;
+    box-sizing: border-box; }
 
 h1, p {
     text-align: center;
@@ -24,7 +29,15 @@ label {
     margin-bottom: 5px;
     color: #555;}
 
-
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;}
 
 .checkbox-group {
     display: flex;
@@ -40,7 +53,9 @@ button {
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
-    width: 100%;}
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 10px;}
 
 button:hover {
     background-color: #218838;}
@@ -49,7 +64,8 @@ button:hover {
     color: red;
     font-size: medium;
     margin-top: 5px;
-    text-align: right; }
+    text-align: right; 
+    display: block;}
 
 .success-message {
     color: green;
@@ -63,8 +79,194 @@ button:hover {
     display: none; }
 
 
-@media (max-width: 600px) {
-    .container {
-        margin: 20px;
-        padding: 20px;
-    }}
+  /* view.html: */  
+.registrations-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;}
+
+.registrations-table th,
+.registrations-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: right; 
+    box-sizing: border-box; }
+
+.registrations-table th {
+    background-color: #f2f2f2;
+    color: #333;
+    font-weight: bold;
+    white-space: nowrap;}
+
+
+.delete-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: medium;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+.update-status-toggle-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: medium;
+    margin: 2px;
+}
+
+.update-status-toggle-btn:hover {
+    background-color: #218838;
+}
+
+.status-selector {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: medium;
+    margin: 2px;
+    min-width: 100px; 
+}
+
+.filter-controls{
+    padding: 6px 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px; 
+    margin: 2px;
+    min-width: 100px; 
+    max-width: 200px; 
+    box-sizing: border-box;
+}
+
+.hidden {
+    display: none;
+}
+
+.action-message {
+    font-size: 14px; 
+    margin-top: 5px;
+    display: block;
+    text-align: center;
+    min-height: 18px;
+}
+
+.back-to-form-link {
+    text-align: center;
+    align-items: center;
+    font-size: x-large;
+    margin: 50px;
+    padding: 20px;
+}
+
+
+a { 
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.containerTbl{
+    background-color: lavenderblush;
+}
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .registrations-table,
+    .registrations-table thead,
+    .registrations-table tbody,
+    .registrations-table th,
+    .registrations-table td,
+    .registrations-table tr {
+        display: block;
+    }
+
+     body {
+        font-size: 25px; 
+    }
+
+    .registrations-table thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+   
+    .registrations-table tr {
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+        border-radius: 8px;
+        padding: 10px;
+        background-color: #fff;
+    }
+
+    
+    .registrations-table td {
+        border: none;
+        position: relative;
+        padding-left: 0; 
+        padding-right: 25px;
+        text-align: right; 
+        white-space: normal;
+        word-wrap: break-word; 
+        overflow-wrap: break-word; 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+        padding-top: 5px; 
+        padding-bottom: 5px; 
+        line-height: 1.4;  
+    }
+
+    
+    .registrations-table td:before {
+        flex-basis: 45%;
+        text-align: right; 
+        font-weight: bold;
+        padding-left: 0; 
+        padding-right: 10px; 
+        white-space: normal;
+        
+    }
+
+    
+    .registrations-table td:last-child {
+        text-align: center;
+        padding-top: 15px;
+        display: block;
+    }
+
+    .registrations-table td:last-child .delete-btn,
+    .registrations-table td:last-child .update-status-toggle-btn,
+    .registrations-table td:last-child .status-select {
+        width: auto; 
+        display: inline-block;
+        margin: 5px;
+    }
+
+     .registrations-table td:last-child .status-selector {
+        width: auto;
+        display: inline-block;
+        margin: 3px;
+        padding: 6px;
+        font-size: 12px;
+        min-width: 90px; 
+    }
+
+}

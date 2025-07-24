@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>צפייה וניהול הרשמות לפסטיבל</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <h1>צפייה וניהול הרשמות</h1>
+    <main>
+        <section class="filter-section">
+            <h2>סינון רשומות</h2>
+            <div class="filter-controls">
+                <label for="wingTypeFilter">סנן לפי סוג כנף:</label>
+                <select id="wingTypeFilter">
+                    <option value="all">כל הסוגים</option>
+                    <option value="feather">נוצה</option>
+                    <option value="leather">עור</option>
+                    <option value="light">אור</option>
+                </select>
+            </div>
+        </section>
+
+        <section class="registrations-list-section">
+            <h2>רשימת הרשמות</h2>
+            <div id="dataDisplay">
+                <p>טוען רשומות...</p>
+                </div>
+        </section>
+       <a href="index.html" class="back-to-form-link">חזרה לטופס ההרשמה</a>
+    </main>
+
+    <script src="script.js"></script>
+ </body>
+</html>
