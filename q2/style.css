@@ -269,6 +269,10 @@ body {
         display: block;
     }
 
+    .content-area{
+        margin-top: 20px;
+    }
+
     .sidebar {
         margin-top: 10px;
         display: block;
