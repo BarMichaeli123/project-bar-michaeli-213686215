@@ -1,11 +1,18 @@
-html { scroll-behavior: smooth; } 
+html { scroll-behavior: smooth;
+       box-sizing: border-box;
+       width: 100%;
+       overflow-x: hidden;} 
 
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background-color: #f4f4f4;
     color: #333;
-    padding: 60px 220px 0 0; }
+    margin: 0; 
+    padding: 0; 
+    direction: rtl;
+    width: 100%; 
+    overflow-x: hidden; }
 
 .main-header {
     background-color: #283747;
@@ -17,26 +24,32 @@ body {
     left: 0; 
     width: 100%;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);}
+    box-sizing: border-box;}
 
 .main-header h1 {
      font-size: 24px; 
      margin: 0;}
 
 .main-wrapper {
-     display: flex; 
-     flex-direction: row; }
+    display: flex; 
+    flex-direction: row;
+    margin-top: 60px;
+    min-height: calc(100vh - 60px); 
+    box-sizing: border-box; }
 
  .sidebar {
     background-color: #34495e;
     color: #fff;
     padding: 20px;
     width: 200px;
-    position: fixed; 
-    top: 60px; 
-    right: 0;
-    height: calc(100% - 60px);
-    overflow-y: auto;}
+    position: fixed;
+    top: 60px;
+    right: 0; 
+    height: calc(100% - 60px); 
+    overflow-y: auto; 
+    z-index: 999;
+    display: block;
+    box-sizing: border-box;}
 
 .sidebar h2 { 
     font-size: 20px; 
@@ -44,7 +57,9 @@ body {
     text-align: center;}
 
 .sidebar ul { 
-    list-style: none; }
+    list-style: none;
+    padding: 0;
+    margin: 0; }
 
 .sidebar ul li a {
     color: #fff;
@@ -61,7 +76,7 @@ body {
     flex-grow: 1;
     padding: 20px;
     margin-right: 200px; 
-    margin-top: 60px; }
+    box-sizing: border-box; }
 
 .card-category { 
     margin-bottom: 30px; }
@@ -73,19 +88,28 @@ body {
     border-bottom: 2px solid #2c3e50;
     padding-bottom: 10px;}
 
+.cards-container, .row { 
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; 
+    justify-content: center;
+    padding: 0; 
+    box-sizing: border-box;
+}    
 
 .survival-card {
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 20px;
-    margin: 20px;
-    width: calc(33% - 20px); /* 3 כרטיסים בשורה */
-    min-width: 280px;
+    width: calc(50% - 10px);
+    min-width: 320px;
+    height:600px;
     position: relative;
     display: flex; 
     flex-direction: column; 
-    justify-content: space-between;}
+    justify-content: space-between;
+    box-sizing: border-box;}
 
 .survival-card h3 {
      font-size: 20px; 
@@ -93,7 +117,7 @@ body {
      color: #34495e; }
 
 .survival-card p { 
-    font-size: 14px; 
+    font-size: large; 
     margin-bottom: 15px; 
     flex-grow: 1;}
 
@@ -107,7 +131,8 @@ body {
     font-size: 14px;
     align-self: flex-start;}
 
-.card-button:hover { background-color: #c0392b; }
+.card-button:hover { 
+    background-color: #c0392b; }
 
 .card-tag {
     background-color: #3498db;
@@ -115,24 +140,30 @@ body {
     padding: 5px 10px;
     border-radius: 5px;
     font-size: 12px;
-    position: absolute; top: 10px; left: 10px;
+    position: absolute; 
+    top: 10px; 
+    left: 10px;
     z-index: 2;}
 
 
 .image-wrapper {
     position: relative;
     width: 100%; 
-    height: 180px;
+    height: 500px;
     overflow: hidden;
     border-radius: 5px;
-    margin-bottom: 15px;}
+    margin-bottom: 15px;
+    box-sizing: border-box;
+   }
 
 .image-wrapper img {
-    width: 100%; 
+   position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
-    transition: transform 0.3s ease;}
+    display: block;}
 
 .image-overlay {
     position: absolute;
@@ -176,3 +207,52 @@ body {
     
 .scroll-to-top:hover { 
      background-color: #303f9f; }
+
+
+@media (max-width: 1199px) { 
+
+    .survival-card {
+        width: calc(50% - 10px);
+        max-width: none; 
+    }
+}
+
+@media (max-width: 767px) {
+
+    .main-wrapper {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .content-area {
+        padding: 15px; 
+        margin-right: 0;
+    }
+
+    .survival-card {
+        width: 100%;
+        max-width: 350px; 
+        min-width: unset; 
+        padding: 15px; 
+    }
+
+    .scroll-to-top {
+        right: 15px; 
+        bottom: 15px;
+        padding: 10px 20px;
+        font-size: 15px;
+    }
+}
+
+
+@media (max-width: 380px) {
+    .content-area {
+        padding: 10px;
+    }
+    .survival-card {
+        max-width: 95%;
+    }
+}
