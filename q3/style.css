@@ -21,6 +21,16 @@ h1, p {
     text-align: center;
     color: #333;}
 
+ img{
+    width: 350px;
+    max-width: 100%;
+    height: auto;
+    align-items: center;
+    margin-right: 40px;
+    display: block;
+    margin: 0 auto;
+ }   
+
 .form-group {
     margin-bottom: 15px;}
 
