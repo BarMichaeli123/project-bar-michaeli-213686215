@@ -3,6 +3,10 @@ html { scroll-behavior: smooth;
        width: 100%;
        overflow-x: hidden;} 
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -18,24 +22,64 @@ body {
     background-color: #283747;
     color: #fff;
     padding: 15px 20px;
-    text-align: center;
     position: fixed; 
     top: 0; 
     left: 0; 
     width: 100%;
     z-index: 1000;
-    box-sizing: border-box;}
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;}
 
 .main-header h1 {
      font-size: 24px; 
      margin: 0;}
+
+.menu-toggle {
+    display: none;
+}
+
+.hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    position: fixed; 
+    left: 20px; 
+    top: 50px;
+    transform: translateY(-50%);
+    z-index: 1001;
+    transition: all 0.3s ease-in-out;}
+
+.hamburger-menu .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;}
+
+.mobile-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 998; 
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;}
 
 .main-wrapper {
     display: flex; 
     flex-direction: row;
     margin-top: 60px;
     min-height: calc(100vh - 60px); 
-    box-sizing: border-box; }
+    box-sizing: border-box;
+    transition: transform 0.3s ease-in-out;  }
 
  .sidebar {
     background-color: #34495e;
@@ -49,7 +93,8 @@ body {
     overflow-y: auto; 
     z-index: 999;
     display: block;
-    box-sizing: border-box;}
+    box-sizing: border-box;
+    transition: transform 0.3s ease-in-out; }
 
 .sidebar h2 { 
     font-size: 20px; 
@@ -76,7 +121,8 @@ body {
     flex-grow: 1;
     padding: 20px;
     margin-right: 200px; 
-    box-sizing: border-box; }
+    box-sizing: border-box; 
+    transition: margin-right 0.3s ease-in-out;}
 
 .card-category { 
     margin-bottom: 30px; }
@@ -219,12 +265,44 @@ body {
 
 @media (max-width: 767px) {
 
-    .main-wrapper {
-        flex-direction: column;
+    .hamburger-menu {
+        display: block;
     }
 
     .sidebar {
-        display: none;
+        margin-top: 10px;
+        display: block;
+        position: fixed; 
+        top: 60px; 
+        right: -260px; 
+        width: 170px; 
+        height: calc(100% - 60px); 
+        background-color: #34495e;
+        color: #fff;
+        padding: 20px;
+        box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+        z-index: 999; 
+        transition: transform 0.3s ease-in-out;
+        overflow-y: auto; 
+        box-sizing: border-box;
+    }
+    
+    .menu-toggle:checked ~ .main-wrapper #sidebar {
+        transform: translateX(-250px); 
+        
+    }
+
+     .mobile-overlay {
+       display: none; 
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 998;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out
     }
 
     .content-area {
@@ -237,6 +315,11 @@ body {
         max-width: 350px; 
         min-width: unset; 
         padding: 15px; 
+        height: auto;
+    }
+
+    .image-wrapper {
+        height: 200px; 
     }
 
     .scroll-to-top {
