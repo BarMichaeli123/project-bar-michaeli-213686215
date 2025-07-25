@@ -211,15 +211,6 @@ a:hover {
         font-size: 25px; 
     }
 
-    h2{
-        font-size: 23px;
-    }
-
-    tr{
-        width: 100%;
-        height: auto;
-        background-color: mistyrose;
-    }
 
     .registrations-table thead tr {
         position: absolute;
@@ -277,8 +268,7 @@ a:hover {
     .registrations-table td:last-child .status-select {
         width: auto; 
         display: inline-block;
-        margin: 0;
-        font-size: 25px;
+        margin: 5px;
     }
 
      .registrations-table td:last-child .status-selector {
