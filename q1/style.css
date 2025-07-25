@@ -1,6 +1,12 @@
 body{
     background-color: aliceblue;
 }
+h1{
+    font-size: 35px;
+    margin: 0;
+    border-bottom: 2px solid black; 
+
+}
 .card {
     margin-bottom: 20px;
 }
